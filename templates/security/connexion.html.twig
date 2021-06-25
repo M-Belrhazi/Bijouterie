@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }}Connexion
+{% endblock %}
+{% block titre %}
+    Connexion
+{% endblock %}
+
+
+
+{% block body %}
+
+        {% for message in app.flashes('success') %}
+            <div class="row mt-4">
+                <div class="alert alert-success col-md-6 text-center">
+                    {{message}}
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <form action="{{path('login')}}" method="post">
+                    <div class="form-group">
+                        <label for="email" class="form-label mt-4">E-mail</label>
+                        <input type="text" class="form-control" id="email" name="_username">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label mt-4" for="password">Mot de passe</label>
+                        <input type="password" class="form-control mb-3" id="password" name="_password">
+                        <a href="{{ path('registration') }}">Pas encore inscrit? cliquez ici</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4 mb-4">Se connecter</button>
+                </form>
+            </div>
+        </div>
+
+
+{% endblock %}

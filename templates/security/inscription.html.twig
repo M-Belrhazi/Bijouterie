@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }}Inscription
+{% endblock %}
+{% block titre %}
+    Inscription
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+
+            <div class="col-md-6">
+                {{ form_start(formu) }}
+                <div >
+                    <label for="">Nom</label>
+                    {{ form_row(formu.nom) }}
+                </div>
+                <div >
+                    <label for="">Prénom</label>
+                    {{ form_row(formu.prenom) }}
+                </div>
+                <div >
+                    <label for="">Pseudo</label>
+                    {{ form_row(formu.username) }}
+                </div>
+                <div >
+                    <label for="">Email</label>
+                    {{ form_row(formu.email) }}
+                </div>
+                <div >
+                    <label for="">Mot de passe</label>
+                    {{ form_row(formu.password) }}
+                </div>
+                <div >
+                    <label for="">Confirmation de mot de passe</label>
+                    {{ form_row(formu.confirm_password) }}
+                </div>
+                <div class="mt-4">
+                {{ form_row(formu.Enregistrer) }}
+                </div>
+                {{ form_end(formu) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
